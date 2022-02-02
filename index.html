@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div id="result">Form Successfully Submitted.</div>
+        <div class="registration_form">
+            <h1>Registration Form</h1>
+            <form id="Form" method="post" onsubmit="return success()" action="#">
+                <div class="form_container">
+                    <div class="form_element">
+                        <label>Name:</label>
+                        <input type="text" id="Name" placeholder="Enter Name"/>
+                    </div>
+                    <div class="form_element">
+                        <label>Email:</label>
+                        <input type="email" id="Email" placeholder="Enter Email"/>
+                    </div> 
+                    <div class="form_element">
+                        <label>Phone number:</label>
+                        <input type="text" id="PhoneNo" placeholder="Enter Contact No"/>
+                    </div>
+                    <div class="form_element">
+                        <label>Date of birth:</label>
+                        <input type="date" id="date" />
+                    </div>
+                    <div class="form_element">
+                        <label>Gender:</label>
+                        <select id="Gender">
+                            <option value="-1">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form_element">
+                        <label>Password:</label>
+                        <input type="password" id="Password" placeholder="Enter Password"/>
+                    </div>
+                    <div class="form_element">
+                        <label>Confirm Password:</label>
+                        <input type="password" id="ConfirmPassword" placeholder="Confirm Your Password"/>
+                    </div>
+                </div>
+                <input type="submit" id="Submit" value="Submit"/>
+            </form>
+        </div>
+
+        <script src="index.js" ></script>
+    </body>
+</html>
