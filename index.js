@@ -1,6 +1,7 @@
 function isNameValidate() {
     let regex = /^[A-Za-z]{2,30}$/;
     let Name = document.querySelector("#Name");
+    console.log(Name.value);
     if(Name.value == ""){
         Name.setCustomValidity("Name cannot be empty");
         Name.reportValidity();
@@ -10,6 +11,7 @@ function isNameValidate() {
         Password.reportValidity();
         return false;
     } else if(!regex.test(Name.value.trim())) {
+        console.log(Name.value);
         Name.setCustomValidity("Name only contains alphabets");
         Name.reportValidity();
         return false;
@@ -37,7 +39,7 @@ function isEmailValidate() {
 };
 
 function isPhoneNoValidate() {
-    let regex = /^(0|91)?[0-9]{10}$/;
+    let regex = /^(0|91)?[6-9][0-9]{9}$/;
     let PhoneNo = document.querySelector("#PhoneNo");
     if(PhoneNo.value == "") {
         PhoneNo.setCustomValidity("Phone No cannot be empty");
@@ -83,7 +85,7 @@ function isGenderSelected(){
 function isPasswordValidate() {
     let regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,12}$/;
     let Password = document.querySelector("#Password");
-    if(Password/value == "") {
+    if(Password.value == "") {
         Password.setCustomValidity("Password cannot be empty");
         Password.reportValidity();
         return false;
@@ -119,6 +121,12 @@ function isConfirmPasswordValidate() {
 
 function success(){
     if(isNameValidate() && isEmailValidate() && isPhoneNoValidate() && isDateValidate() && isGenderSelected() && isPasswordValidate() && isConfirmPasswordValidate()) {
+        document.querySelector("#result").style.display = "block";
+        function hide() {
+            document.querySelector("#result").style.display = "none";
+        }
+        setTimeout(hide, 2000);
+        clear();
         return true;
     } else {
         return false;
@@ -135,15 +143,8 @@ function clear() {
     document.querySelector("#ConfirmPassword").value = "";
 }
 
-const Form = document.querySelector("#Form");
 document.querySelector("#result").style.display = "none";
 
-Form.addEventListener("submit", function(event) {
+document.querySelector("#Form").addEventListener("submit", function(event) {
     event.preventDefault();
-    document.querySelector("#result").style.display = "block";
-    function hide() {
-        document.querySelector("#result").style.display = "none";
-    }
-    setTimeout(hide, 5000);
-    clear();
 });

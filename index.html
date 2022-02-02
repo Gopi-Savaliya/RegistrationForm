@@ -9,7 +9,7 @@
         <div id="result">Form Successfully Submitted.</div>
         <div class="registration_form">
             <h1>Registration Form</h1>
-            <form id="Form" method="post" onsubmit="return success()" action="#">
+            <form id="Form" method="get" action="#">
                 <div class="form_container">
                     <div class="form_element">
                         <label>Name:</label>
@@ -44,7 +44,7 @@
                         <input type="password" id="ConfirmPassword" placeholder="Confirm Your Password"/>
                     </div>
                 </div>
-                <input type="submit" id="Submit" value="Submit"/>
+                <input type="submit" id="Submit" value="Submit" onclick="return success()"/>
             </form>
         </div>
 
