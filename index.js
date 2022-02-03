@@ -1,5 +1,5 @@
 function isNameValidate() {
-    let regex = /^[A-Za-z]{2,30}$/;
+    let regex = /^[A-Za-z ]{2,30}$/;
     let Name = document.querySelector("#Name");
     console.log(Name.value);
     if(Name.value == ""){
