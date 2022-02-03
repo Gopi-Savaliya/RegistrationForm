@@ -1,7 +1,6 @@
 function isNameValidate() {
     let regex = /^[A-Za-z ]{2,30}$/;
     let Name = document.querySelector("#Name");
-    console.log(Name.value);
     if(Name.value == ""){
         Name.setCustomValidity("Name cannot be empty");
         Name.reportValidity();
@@ -11,7 +10,6 @@ function isNameValidate() {
         Password.reportValidity();
         return false;
     } else if(!regex.test(Name.value.trim())) {
-        console.log(Name.value);
         Name.setCustomValidity("Name only contains alphabets");
         Name.reportValidity();
         return false;
